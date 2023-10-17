@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(37, 15, 48);
+  
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
