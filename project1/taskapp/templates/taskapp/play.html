@@ -1,0 +1,11 @@
+{% extends 'taskapp/layout.html' %}
+
+{% block body%}
+
+    <h1>Music Player</h1>
+    <audio controls>
+        <source src="{{ audio_url }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+{% endblock  %}

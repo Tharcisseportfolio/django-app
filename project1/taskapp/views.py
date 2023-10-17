@@ -61,3 +61,8 @@ def remove(request):
         "form": RemoveTaskForm()
     })
 
+def play(request):
+    
+    audio_url = 'taskapp/static/taskapp/.mp3'
+
+    return render(request, 'taskapp/play.html', {'audio_url': audio_url})
