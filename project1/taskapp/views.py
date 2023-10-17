@@ -8,8 +8,10 @@ from django.urls import reverse
 
 #client side validation of data
 class NewTaskForm(forms.Form):
-    task = forms.CharField(label="New Task")
-    # priority = forms.IntegerField(min_value=1,max_value=5)
+    task = forms.CharField(label="Add Task\n")
+
+class RemoveTaskForm(forms.Form):
+    task = forms.CharField(label="RemoveTask\n")
 
 def index(request):
     if "tasks" not in request.session:
@@ -34,11 +36,28 @@ def add(request):
             return HttpResponseRedirect(reverse("taskapp:index"))
         else:
             return render(request,"taskapp/add.html",{
-        "form" : form
-
+        "form" : form.capitalize()
             })
         
     return render(request,"taskapp/add.html",{
         "form" : NewTaskForm()
+    })
+
+
+def remove(request):
+    if request.method == 'POST':
+        form = NewTaskForm(request.POST)
+        if form.is_valid():
+            task = form.cleaned_data["task"]
+            if task in request.session["tasks"]:
+                request.session["tasks"].remove(task)
+                request.session.modified = True  # Save changes to the session
+            return HttpResponseRedirect(reverse("taskapp:index"))
+        else:
+            return render(request, "taskapp/add.html", {
+                "form": form
+            })
+    return render(request, "taskapp/remove.html", {
+        "form": RemoveTaskForm()
     })
 

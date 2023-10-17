@@ -1,11 +1,11 @@
 {% extends 'taskapp/layout.html' %}
 
 {% block body %}
-    <h1>Add Task to the list</h1>
-    <form action = "{% url 'taskapp:add' %}" method="post"> 
+    <h1>Remove Task to the list</h1>
+    <form action = "{% url 'taskapp:remove' %}" method="post"> 
         {% csrf_token %}
         {{form}}
-        <input type="submit">
+        <button><input type="submit"></button>
     </form>
 
     <button><a href="{% url 'taskapp:index' %}">View</a></button>
