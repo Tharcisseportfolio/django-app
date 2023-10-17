@@ -2,12 +2,11 @@
 
 {% block body %}
     <h1>Add Task to the list</h1>
-    <form action="/taskapp/add" method="post"> 
-       {% comment %} I am sleep looking {% endcomment %}
+    <form action = "{% url 'taskapp:add' %}" method="post"> 
         <input type="text" name="task" placeholder="Add task">
         <input type="submit">
     </form>
 
-    <a href="/taskapp/">View task</a>
+    <a href="{% url 'taskapp:index' %}">View task</a>
 
 {% endblock %}

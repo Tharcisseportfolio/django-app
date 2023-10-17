@@ -8,6 +8,6 @@
         {% endfor %}
     </ul>
 
-    <a href="/taskapp/add">Add a task </a>
+    <a href="{% url 'taskapp:add' %}">Add a task </a>
 
-{% endblock %}
+{% endblock body%}
