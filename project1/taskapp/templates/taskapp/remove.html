@@ -5,7 +5,7 @@
     <form action = "{% url 'taskapp:remove' %}" method="post"> 
         {% csrf_token %}
         {{form}}
-        <button><input type="submit"></button>
+        <input class="submit" type="submit">
     </form>
 
     <button><a href="{% url 'taskapp:index' %}">View</a></button>

@@ -7,20 +7,93 @@
     <title>Tasks</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="{% static 'taskapp/task.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <style>
     body{
+        position: relative;
+        position: absolute;
+        justify-content: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        align-items: center;
         background-color: black;
         color: aliceblue;
+        left: 30%;
+    }
+    .task{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        flex-grow: 2;
+        flex-basis: 200px;
     }
 
-    button{
-
+    .task .fa{
         position: relative;
-        width: 20%%;
-        height: inherit;
+        background-image: linear-gradient(red, yellow);
+        border-radius: 6px;
+        left: 30%;
+        font-size: 80px;
     }
+        
+
+
+
+    h1{
+        position: relative;
+        color:bisque;
+        left: 10%;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    h1:hover{
+        position: relative;
+        font-size: 20px;
+        left: 0%;
+        
+    }
+    .submit{
+        position: relative;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        padding: 6px;
+        background-color: aqua;
+        left : 20px;    
+
+    }
+    input{
+        position: relative;
+        padding: 4px;
+        border: none;
+        border-color: default_if_none;
+        border-radius:5px ;
+
+    }
+
+    a,button{
+        position: relative;
+        flex-direction: column;
+        background-color: aqua;
+        border: none;
+        padding: 4px;
+        margin: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+       
+   }
+   #calender{
+    background-color: blue;
+    font-size: 30px;
+   }
+   button{
+    position: relative;
+    margin: 30px;
+    right: 5%;
+    justify-content: center;
+    place-items: center;
+   }
     
 </style>
 <body>

@@ -11,7 +11,7 @@ class NewTaskForm(forms.Form):
     task = forms.CharField(label="Add Task\n")
 
 class RemoveTaskForm(forms.Form):
-    task = forms.CharField(label="RemoveTask\n")
+    task = forms.CharField(label="Remove Task\n")
 
 def index(request):
     if "tasks" not in request.session:

@@ -2,11 +2,17 @@
 
 {% block  body%}
     <h1>Tasks registered</h1>
-    <ul>
-        {% for task in tasks%}
-            <li>{{task}}</li>
-        {% endfor %}
-    </ul>
+    <div class="task">
+        <ul>
+            {% for task in tasks%}
+                <li>{{task}}</li>
+            {% endfor %}
+        </ul>
+
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    </div>
+   
+
 
     <button><a href="{% url 'taskapp:add' %}">Add</a></button>
 
