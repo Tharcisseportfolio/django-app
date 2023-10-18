@@ -8,10 +8,10 @@ from django.urls import reverse
 
 #client side validation of data
 class NewTaskForm(forms.Form):
-    task = forms.CharField(label="Add Task\n")
+    task = forms.CharField(label="")
 
 class RemoveTaskForm(forms.Form):
-    task = forms.CharField(label="Remove Task\n")
+    task = forms.CharField(label="")
 
 def index(request):
     if "tasks" not in request.session:
